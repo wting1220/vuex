@@ -18,11 +18,11 @@ const mutations = {
 };
 const actions = {
     async fetchTodos({ commit }) {
-        const res = await axios.get("http://jsonplaceholder.typicode.com/todos?_limit=10");
+        const res = await axios.get("http://jsonplaceholder.typicode.com/todos");
         commit("setTodos", res.data);
     },
     async addTodo({ commit }, title) {
-        const res = await axios.post("http://jsonplaceholder.typicode.com/todos?_limit=10", {
+        const res = await axios.post("http://jsonplaceholder.typicode.com/todos", {
             title,
             completed: false
         });
